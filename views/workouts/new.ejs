@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel='stylesheet' href='/css/style.css' />
+  <title>PT-Connect</title>
+</head>
+<body>
+	<h2>Enter a  Workout </h2>
+<form action=“/workouts” method="POST">
+  <label>Type:
+  <select name=“Type”>  
+ <option value=“Strength”>Strength</option>  </label>
+ <option value=“Stretch”> Stretch</option>  </label>  </label>
+
+  <label>Problem Area
+   <select name=“Problem Area”>
+   <option value="Knee Pain">Knee Pain</option>
+   <option value="Neck Pain">Neck Pain</option>     <option value="KneeArthritis">KneeArthritis<option>
+   <option value="Back Pain">Back Pain</option>
+ <option value=“Hip Pain">Hip Pain</option>   </select>
+ <option value=“Foot Pain">Foot Pain</option>  </label>
+ <option value=“Arm Pain">Arm Pain</option>  </label>
+  </label>
+  <label>Routine:
+   <input type="text" name="">
+  <label>Reps:
+   <input type=“number ” name="cast">  </label>  
+ <input type="submit" value="Add Workout”></  <input class="btn btn-small" type="submit" value="Add Flight">
+</form>
+
+</body>
+</html>
