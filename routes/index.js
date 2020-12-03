@@ -4,8 +4,10 @@ const express = require('express');
 
 const router = express.Router();
 // TODO: require index controller
+const passport = require('passport');
+const indexCtrl = require('../controllers/index');
 
-c
+
 router.get('/auth/google', passport.authenticate(
     'google', {
         scope: ['profile', 'email']
@@ -14,7 +16,7 @@ router.get('/auth/google', passport.authenticate(
 
 router.get('/oauth2callback', passport.authenticate(
     'google', {
-        successRedirect: '/flights',
+        successRedirect: '/workouts',
         failureRedirect: '/'
     }
 ));

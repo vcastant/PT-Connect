@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel='stylesheet' href='/css/style.css' />
+
+  <title>PT-Connect</title>
+  <form action="container" action="/workouts/<%= workout._id%>/trainers" method="post">
+    <p>Add a New Workout</p>
+    <select name=“problemArea”>
+      <option value="Knee Pain">Knee Pain</option>
+      <option value="Neck Pain">Neck Pain</option>
+      <option value="Back Pain">Back Pain</option>
+      <option value=“Hip Pain">Hip Pain</option>
+      <option value=“Foot Pain">Foot Pain</option>
+      <option value=“Arm Pain">Arm Pain</option>
+    </select>
+    <label>Problem Area:</label>
+    <select name=“routine”>
+      <option value="Knee Strength">Knee Strength</option>
+      <option value="Knee Stretch">Knee Stretch</option>
+      <option value="Neck Strength">Neck Strength</option>
+      <option value="Neck Stretch">Neck Stretch</option>
+      <option value="Back Strength">Back Strength</option>
+      <option value="Back Stretch">Back Stretch</option>
+      <option value=“Calf Strength">Calf Strength</option>
+      <option value=“Calf Stretch">Calf Stretch</option>
+      <option value=“Hip Stretch">Hip Stretch</option>
+      <option value=“Hip Strength">Hip Strength</option>
+      <option value=“Forearm Stretch">Forearm Stretch</option>
+      <option value=“Forearm Strength">Forearm Strength</option>
+    </select>
+    <label>Routine:</label>
+
+    <input type="number" name="min">
+    <input type="number" name="max">
+    <label> Reps </label>
+  </form>
+  <% if(workout.trainers.length) { %>
+  <h6>Current Workouts For this Problem Area</h6>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Routine</th>
+      <th>Rep</th>
+      <th>Added by</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% workout.problemArea.routine.forEach(function(problemArea) { %>
+    <tr>
+      <td><%= type.routine %></td>
+      <td><%= problemArea.createdBy.displayName %></td>
+    </tr>
+    <% }); %>
+  </tbody>
+  </table>
+  <% } else { %>
+  <h6>There Are Currently No Workouts under this problem area </h6>
+  <% } %>
+
+  <% if(workouts.length) { %>
+  <h6>Here are the Workouts</h6>
+  <% trainers.forEach(function(trainer) { %>
+  <p>Type : $<%= trainer.problemArea %><%= trainer.routine %> - Added By: <%= trainer.createdBy.displayName %></p>
+  <% }) %>
+  <% } else { %>
+  <h6>There Are No Workouts for this Problem Area</h6>
+  <% } %>
+
+  </main>
+
+  </body>
+
+</html>

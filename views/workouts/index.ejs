@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pt-Connect</title>
+    <title>PT-Connect</title>
 </head>
+
 <body>
     <h1>Workout Index</h1>
     <table>
@@ -14,18 +16,21 @@
             <th>Problem Area</th>
             <th>Routine</th>
             <th>Rep</th>
+            <th>Created By</th>
         </thead>
         <tbody>
-            <% workouts.forEach(workout => { %>
-                <tr>
-                    <td><%= workout.type %></td>
-                    <td><%= workout.problemArea %></td>
-                    <td><%= workout.routine %></td>
-                    <td><%= workout.rep
-
-                </tr>
+            <% workouts.forEach(function(workout){ %>
+            <tr>
+                <td><%= workout.type %></td>
+                <td><%= workout.problemArea %></td>
+                <td><%= workout.routine %></td>
+                <td><%= workout.rep %></td>
+                <td><%= workout.createdBy.displayName %></td>
+                <td><a href="/workouts/<%= workout._id %>">Details</a></td>
+            </tr>
             <% }) %>
         </tbody>
     </table>
 </body>
+
 </html>
