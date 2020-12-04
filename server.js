@@ -16,8 +16,7 @@ app.set('view engine', 'ejs');
 
 require('dotenv').config();
 
-require ('./passport/database');
-require('./config/database');
+require ('./config/passport');
 
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
@@ -26,7 +25,7 @@ app.use(methodOverride('_method'));
 
 app.use(session({
     resave: false,
-    secret: process.env.SECRET,
+    secret: process.env.SESSION_SECRET,
     saveUninitialized: true
 }));
 
