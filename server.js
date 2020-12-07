@@ -17,7 +17,6 @@ app.set('view engine', 'ejs');
 require('dotenv').config();
 
 require ('./config/passport');
-
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
